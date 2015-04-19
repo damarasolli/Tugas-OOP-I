@@ -1,0 +1,43 @@
+package rumahsakit;
+
+/**
+ *
+ * @author 13.7548
+ */
+public class Pasien {
+
+    private String nama;
+    private String id;
+    private String keluhan;
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) throws Exception {
+        for (int i = 0; i < nama.length(); i++) {
+            if (Character.isDigit(nama.charAt(i))) {
+                throw new Exception("Nama dokter harus huruf");
+            }        
+        this.nama = nama;
+        }
+    }    
+
+    public String getId() {
+        Integer.parseInt(id);
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getKeluhan() {
+        return keluhan;
+    }
+
+    public void setKeluhan(String Keluhan) {
+        this.keluhan = Keluhan;
+    }
+
+}
