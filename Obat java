@@ -1,0 +1,57 @@
+package rumahsakit;
+
+/**
+ *
+ * @author 13.7548
+ */
+
+
+public class Obat {
+
+    private String kodeobat;
+    private String namaobat;
+    private int stock;
+    private int harga;
+
+    Obat() {
+        stock = 10;
+    }
+
+    public String getKodeobat() {
+        return kodeobat;
+    }
+
+    public void setKodeobat(String kodeObat) {
+        Integer.parseInt(kodeObat);
+        this.kodeobat = kodeObat;
+    }
+
+    public String getNamaobat() {
+        return namaobat;
+    }
+
+    public void setNamaobat(String namaObat) throws Exception {
+        for (int i = 0; i < namaObat.length(); i++) {
+            if (Character.isDigit(namaObat.charAt(i))) {
+                throw new Exception("Nama obat harus huruf");
+            }
+        }
+
+            this.namaobat = namaObat;
+    }
+    
+
+    public int getStock() {
+        stock--;
+        return stock;
+    }
+
+    public int getHarga() {
+        return harga;
+    }
+
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
+}
