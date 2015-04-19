@@ -1,0 +1,60 @@
+package rumahsakit;
+
+/**
+ *
+ * @author 13.7548
+ */
+import java.util.Date;
+import java.io.*;
+
+public class Pelayanan {
+
+    BufferedReader rs = new BufferedReader(new InputStreamReader(System.in));
+    private String jenispelayanan;
+    private Date tanggalperiksa;
+    private Dokter dokter;
+    private Pasien pasien;
+    private Perawat perawat;
+    private Obat obat;
+
+    public String getJenispelayanan() {
+        return jenispelayanan;
+    }
+
+    public void setJenisPelayanan(Pasien pasien, Obat obat)throws Exception {
+        if (pasien.getKeluhan().equalsIgnoreCase("batuk")) {
+            jenispelayanan = "minum obat";
+            obat.setNamaobat("Komik");
+            obat.setKodeobat("11");
+            obat.setHarga(4000);
+        } else if (pasien.getKeluhan().equalsIgnoreCase("demam")) {
+            jenispelayanan = "istirahat";
+            obat.setNamaobat("Paracetamol");
+            obat.setKodeobat("22");
+            obat.setHarga(3500);
+        }
+    }
+
+    public Date getTanggalperiksa() {
+        return tanggalperiksa;
+    }
+
+    public void setTanggalperiksa(Date tanggalPeriksa) {
+        this.tanggalperiksa = tanggalPeriksa;
+    }
+
+    public Dokter getDokter() {
+        return dokter;
+    }
+
+
+    public Perawat getPerawat() {
+        return perawat;
+    }
+
+
+    public Pasien getPasien() {
+        return pasien;
+    }
+
+}
